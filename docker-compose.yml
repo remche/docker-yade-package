@@ -6,6 +6,7 @@ services:
         context: .
         dockerfile: Dockerfile-${DISTR}
       image: yade-${DISTR}
+      container_name: yade-${DISTR}
       command: ./test.sh ${DISTR}
       volumes: 
           - ./pkg-${DISTR}:/data 
