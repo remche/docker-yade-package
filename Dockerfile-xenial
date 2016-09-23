@@ -1,0 +1,63 @@
+# Dockerfile
+FROM ubuntu:16.04
+
+RUN apt-get clean && apt-get update && apt-get install -y \ 
+    cmake \
+    git \
+    freeglut3-dev \
+    libloki-dev \
+    libboost-all-dev \
+    fakeroot \
+    dpkg-dev \
+    build-essential \
+    g++ \
+    python-dev \
+    ipython \
+    python-matplotlib \
+    libsqlite3-dev \
+    python-numpy \
+    python-tk \
+    gnuplot \
+    libgts-dev \
+    python-pygraphviz \
+    libvtk6-dev \
+    python-numpy \
+    libeigen3-dev \
+    python-xlib \
+    python-pyqt5 \
+    pyqt5-dev-tools \
+    python-pyqt5.qtwebkit \
+    gtk2-engines-pixbuf \
+    python-argparse \
+    libqglviewer-dev \
+    python-imaging \
+    libjs-jquery \
+    python-sphinx \
+    python-git \
+    python-bibtex \
+    libxmu-dev \
+    libxi-dev \
+    libcgal-dev \
+    help2man \
+    libbz2-dev \
+    zlib1g-dev \
+    python-minieigen \
+    libmetis-dev \
+    libopenblas-dev \
+    libsuitesparse-dev \
+    pyqt4-dev-tools \
+    python-all-dev \
+    python-gts \
+    python-qt4 \
+    dvipng \
+    lmodern \
+    texlive-fonts-recommended \
+    texlive-latex-extra \
+    texlive-latex-recommended \
+    texlive-pictures \
+    texlive-xetex \
+    tipa \
+    devscripts \
+    git-buildpackage \
+    debhelper \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*

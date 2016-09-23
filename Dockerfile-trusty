@@ -1,0 +1,67 @@
+# Dockerfile
+FROM ubuntu:14.04
+
+RUN apt-get clean && apt-get update && apt-get install -y wget
+
+RUN echo "deb http://www.yade-dem.org/packages/ trusty/" >> /etc/apt/sources.list
+RUN wget -O - http://www.yade-dem.org/packages/yadedev_pub.gpg |apt-key add -
+
+RUN apt-get clean && apt-get update && apt-get install -y \ 
+    cmake \
+    git \
+    freeglut3-dev \
+    libloki-dev \
+    libboost-all-dev \
+    fakeroot \
+    dpkg-dev \
+    build-essential \
+    g++ \
+    python-dev \
+    ipython \
+    python-matplotlib \
+    libsqlite3-dev \
+    python-numpy \
+    python-tk \
+    gnuplot \
+    libgts-dev \
+    python-pygraphviz \
+    libvtk5-dev \
+    python-numpy \
+    libeigen3-dev \
+    python-xlib \
+    gtk2-engines-pixbuf \
+    python-argparse \
+    libqglviewer-dev \
+    python-imaging \
+    libjs-jquery \
+    python-sphinx \
+    python-git \
+    python-bibtex \
+    libxmu-dev \
+    libxi-dev \
+    libcgal-dev \
+    help2man \
+    libbz2-dev \
+    zlib1g-dev \
+    python-minieigen \
+    libmetis-dev \
+    libopenblas-dev \
+    libsuitesparse-dev \
+    pyqt4-dev-tools \
+    python-all-dev \
+    python-gts \
+    python-qt4 \
+    dvipng \
+    lmodern \
+    texlive-fonts-recommended \
+    texlive-latex-extra \
+    texlive-latex-recommended \
+    texlive-pictures \
+    texlive-xetex \
+    tipa \
+    devscripts \
+    git-buildpackage \
+    debhelper \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+COPY build-yade-package /usr/local/bin/
