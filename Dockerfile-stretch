@@ -1,5 +1,7 @@
 # Dockerfile
-FROM ubuntu:16.04
+FROM debian:stretch
+
+RUN sed -i "s/httpredir/ftp.fr/" /etc/apt/sources.list
 
 RUN apt-get clean && apt-get update && apt-get install -y \ 
     cmake \
@@ -29,7 +31,8 @@ RUN apt-get clean && apt-get update && apt-get install -y \
     python-pyqt5.qtwebkit \
     gtk2-engines-pixbuf \
     python-argparse \
-    libqglviewer-dev \
+    libqglviewer-headers \
+    libqglviewer-dev-qt5 \
     python-imaging \
     libjs-jquery \
     python-sphinx \
@@ -51,6 +54,7 @@ RUN apt-get clean && apt-get update && apt-get install -y \
     python-qt4 \
     dvipng \
     lmodern \
+    texlive-generic-extra \
     texlive-fonts-recommended \
     texlive-latex-extra \
     texlive-latex-recommended \
@@ -59,8 +63,6 @@ RUN apt-get clean && apt-get update && apt-get install -y \
     tipa \
     devscripts \
     git-buildpackage \
-    debhelper \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY build-yade-package /usr/local/bin/
-
