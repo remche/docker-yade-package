@@ -9,5 +9,6 @@ services:
       container_name: yade-${DISTR}
       volumes: 
           - /tmp/pkg-${DISTR}:/data 
+          - /home/si/.gnupg:/root/.gnupg
       working_dir: /data
       command: build-yade-package ${DISTR}
