@@ -1,5 +1,5 @@
 # Dockerfile
-FROM ubuntu:16.04
+FROM ubuntu:16.10
 
 RUN apt-get clean && apt-get update && apt-get install -y \ 
     build-essential \
@@ -26,7 +26,7 @@ RUN apt-get clean && apt-get update && apt-get install -y \
     libloki-dev \
     libmetis-dev \
     libopenblas-dev \
-    libqglviewer-dev \
+    libqglviewer-dev-qt5 \
     libsqlite3-dev \
     libsuitesparse-dev \
     libvtk6-dev \

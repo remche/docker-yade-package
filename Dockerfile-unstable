@@ -1,10 +1,11 @@
 # Dockerfile
-FROM ubuntu:16.04
+FROM debian:unstable
+
+RUN sed -i "s/httpredir/ftp.fr/" /etc/apt/sources.list
 
 RUN apt-get clean && apt-get update && apt-get install -y \ 
     build-essential \
     cmake \
-    debhelper \
     devscripts \
     dpkg-dev \
     dvipng \
@@ -26,14 +27,14 @@ RUN apt-get clean && apt-get update && apt-get install -y \
     libloki-dev \
     libmetis-dev \
     libopenblas-dev \
-    libqglviewer-dev \
+    libqglviewer-dev-qt5 \
+    libqglviewer-headers \
     libsqlite3-dev \
     libsuitesparse-dev \
     libvtk6-dev \
     libxi-dev \
     libxmu-dev \
     lmodern \
-    pyqt5-dev-tools \
     pyqt5-dev-tools \
     python-all-dev \
     python-argparse \
@@ -53,6 +54,7 @@ RUN apt-get clean && apt-get update && apt-get install -y \
     python-tk \
     python-xlib \
     texlive-fonts-recommended \
+    texlive-generic-extra \
     texlive-latex-extra \
     texlive-latex-recommended \
     texlive-pictures \
@@ -62,4 +64,3 @@ RUN apt-get clean && apt-get update && apt-get install -y \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY build-yade-package /usr/local/bin/
-

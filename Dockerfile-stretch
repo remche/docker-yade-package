@@ -4,65 +4,64 @@ FROM debian:stretch
 RUN sed -i "s/httpredir/ftp.fr/" /etc/apt/sources.list
 
 RUN apt-get clean && apt-get update && apt-get install -y \ 
-    cmake \
-    git \
-    freeglut3-dev \
-    libloki-dev \
-    libboost-all-dev \
-    fakeroot \
-    dpkg-dev \
     build-essential \
+    cmake \
+    devscripts \
+    dpkg-dev \
+    dvipng \
+    fakeroot \
+    freeglut3-dev \
     g++ \
-    python-dev \
-    ipython \
-    python-matplotlib \
-    libsqlite3-dev \
-    python-numpy \
-    python-tk \
+    git \
+    git-buildpackage \
     gnuplot \
-    libgts-dev \
-    python-pygraphviz \
-    libvtk6-dev \
-    python-numpy \
-    libeigen3-dev \
-    python-xlib \
-    python-pyqt5 \
-    pyqt5-dev-tools \
-    python-pyqt5.qtwebkit \
     gtk2-engines-pixbuf \
-    python-argparse \
-    libqglviewer-headers \
-    libqglviewer-dev-qt5 \
-    python-imaging \
-    libjs-jquery \
-    python-sphinx \
-    python-git \
-    python-bibtex \
-    libxmu-dev \
-    libxi-dev \
-    libcgal-dev \
     help2man \
+    ipython \
+    libboost-all-dev \
     libbz2-dev \
-    zlib1g-dev \
-    python-minieigen \
+    libcgal-dev \
+    libeigen3-dev \
+    libgts-dev \
+    libjs-jquery \
+    libloki-dev \
     libmetis-dev \
     libopenblas-dev \
+    libqglviewer-dev-qt5 \
+    libqglviewer-headers \
+    libsqlite3-dev \
     libsuitesparse-dev \
-    pyqt4-dev-tools \
-    python-all-dev \
-    python-gts \
-    python-qt4 \
-    dvipng \
+    libvtk6-dev \
+    libxi-dev \
+    libxmu-dev \
     lmodern \
-    texlive-generic-extra \
+    pyqt5-dev-tools \
+    pyqt5-dev-tools \
+    python-all-dev \
+    python-argparse \
+    python-bibtex \
+    python-dev \
+    python-git \
+    python-gts \
+    python-imaging \
+    python-matplotlib \
+    python-minieigen \
+    python-numpy \
+    python-numpy \
+    python-pygraphviz \
+    python-pyqt5 \
+    python-pyqt5.qtwebkit \
+    python-sphinx \
+    python-tk \
+    python-xlib \
     texlive-fonts-recommended \
+    texlive-generic-extra \
     texlive-latex-extra \
     texlive-latex-recommended \
     texlive-pictures \
     texlive-xetex \
     tipa \
-    devscripts \
-    git-buildpackage \
+    zlib1g-dev \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY build-yade-package /usr/local/bin/

@@ -7,61 +7,61 @@ RUN echo "deb http://www.yade-dem.org/packages/ trusty/" >> /etc/apt/sources.lis
 RUN wget -O - http://www.yade-dem.org/packages/yadedev_pub.gpg |apt-key add -
 
 RUN apt-get clean && apt-get update && apt-get install -y \ 
-    cmake \
-    git \
-    freeglut3-dev \
-    libloki-dev \
-    libboost-all-dev \
-    fakeroot \
-    dpkg-dev \
     build-essential \
+    cmake \
+    debhelper \
+    devscripts \
+    dpkg-dev \
+    dvipng \
+    fakeroot \
+    freeglut3-dev \
     g++ \
-    python-dev \
-    ipython \
-    python-matplotlib \
-    libsqlite3-dev \
-    python-numpy \
-    python-tk \
+    git \
+    git-buildpackage \
     gnuplot \
-    libgts-dev \
-    python-pygraphviz \
-    libvtk5-dev \
-    python-numpy \
-    libeigen3-dev \
-    python-xlib \
     gtk2-engines-pixbuf \
-    python-argparse \
-    libqglviewer-dev \
-    python-imaging \
-    libjs-jquery \
-    python-sphinx \
-    python-git \
-    python-bibtex \
-    libxmu-dev \
-    libxi-dev \
-    libcgal-dev \
     help2man \
+    ipython \
+    libboost-all-dev \
     libbz2-dev \
-    zlib1g-dev \
-    python-minieigen \
+    libcgal-dev \
+    libeigen3-dev \
+    libgts-dev \
+    libjs-jquery \
+    libloki-dev \
     libmetis-dev \
     libopenblas-dev \
+    libqglviewer-dev \
+    libsqlite3-dev \
     libsuitesparse-dev \
+    libvtk5-dev \
+    libxi-dev \
+    libxmu-dev \
+    lmodern \
     pyqt4-dev-tools \
     python-all-dev \
+    python-argparse \
+    python-bibtex \
+    python-dev \
+    python-git \
     python-gts \
+    python-imaging \
+    python-matplotlib \
+    python-minieigen \
+    python-numpy \
+    python-numpy \
+    python-pygraphviz \
     python-qt4 \
-    dvipng \
-    lmodern \
+    python-sphinx \
+    python-tk \
+    python-xlib \
     texlive-fonts-recommended \
     texlive-latex-extra \
     texlive-latex-recommended \
     texlive-pictures \
     texlive-xetex \
     tipa \
-    devscripts \
-    git-buildpackage \
-    debhelper \
+    zlib1g-dev \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY build-yade-package /usr/local/bin/
