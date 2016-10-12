@@ -53,6 +53,7 @@ RUN apt-get clean && apt-get update && apt-get install -y \
     python-tk \
     python-xlib \
     texlive-fonts-recommended \
+    texlive-generic-extra \
     texlive-latex-extra \
     texlive-latex-recommended \
     texlive-pictures \
