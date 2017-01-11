@@ -1,0 +1,5 @@
+[yade-dem.org]
+fqdn = yade-dem.org
+method = scp
+login = repos
+incoming = /var/mini-dinstall/mini-dinstall/incoming
