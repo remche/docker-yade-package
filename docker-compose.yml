@@ -12,3 +12,12 @@ services:
           - ${HOME}/.gnupg:/root/.gnupg
       working_dir: /data
       command: build-yade-package ${DISTR}
+
+    yade-install:
+      build:
+        context: .
+        dockerfile: Dockerfile-install-${DISTR}
+      image: yade-install-${DISTR}
+      container_name: yade-install-${DISTR}
+      command: bash -c "apt-get update && apt-get install -y yadedaily"
+
