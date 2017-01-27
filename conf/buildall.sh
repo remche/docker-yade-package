@@ -10,5 +10,3 @@ for distro in ${distros[@]}; do
     dput -U yade-dem.org /tmp/pkg-$distro/*.changes
     rm -rf /tmp/pkg-$distro/trunk
 done
-
-docker rm -v $(docker ps -a -q -f status=exited)
