@@ -4,7 +4,7 @@ cd trunk
 version=$(git describe --tags|cut -c -12)$(git rev-parse HEAD|cut -c -7)~$1
 date=$(date +"%a, %d %b %Y %X %z")
 echo $date
-git clone https://github.com/remche/yadedaily.git debian
+git clone https://github.com/yade/yadedaily.git debian
 git -C debian checkout remotes/origin/$1
 
 sed -i.bak -e s/VERSION/$version/ -e s/DISTRIBUTION/$1/ -e s/DATE/"$date"/ debian/changelog
