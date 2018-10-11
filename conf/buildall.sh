@@ -1,6 +1,6 @@
 #!/bin/bash
 
-distros=(jessie stretch unstable trusty xenial yakkety)
+distros=(jessie stretch unstable trusty xenial yakkety bionic)
 
 cd docker-yade-package
 for distro in ${distros[@]}; do

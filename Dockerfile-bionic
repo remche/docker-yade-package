@@ -1,0 +1,66 @@
+# Dockerfile
+FROM ubuntu:18.04
+
+RUN apt-get clean && apt-get update && apt-get install -y \ 
+    build-essential \
+    cmake \
+    debhelper \
+    devscripts \
+    dpkg-dev \
+    dvipng \
+    fakeroot \
+    freeglut3-dev \
+    g++ \
+    git \
+    git-buildpackage \
+    gnuplot \
+    gtk2-engines-pixbuf \
+    help2man \
+    ipython \
+    libboost-all-dev \
+    libbz2-dev \
+    libcgal-dev \
+    libeigen3-dev \
+    libgts-dev \
+    libjs-jquery \
+    libloki-dev \
+    libmetis-dev \
+    libopenblas-dev \
+    libqglviewer-dev-qt5 \
+    libsqlite3-dev \
+    libsuitesparse-dev \
+    libvtk6-dev \
+    libxi-dev \
+    libxmu-dev \
+    lmodern \
+    pyqt5-dev-tools \
+    pyqt5-dev-tools \
+    python-all-dev \
+    python-argparse \
+    python-bibtex \
+    python-dev \
+    python-git \
+    python-gts \
+    python-imaging \
+    python-matplotlib \
+    python-minieigen \
+    python-numpy \
+    python-numpy \
+    python-pygraphviz \
+    python-pyqt5 \
+    python-pyqt5.qtwebkit \
+    python-sphinx \
+    python-tk \
+    python-xlib \
+    texlive-fonts-recommended \
+    texlive-generic-extra \
+    texlive-latex-extra \
+    texlive-latex-recommended \
+    texlive-pictures \
+    texlive-xetex \
+    tipa \
+    zlib1g-dev \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+COPY build-yade-package /usr/local/bin/
+
