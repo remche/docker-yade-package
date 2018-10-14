@@ -50,6 +50,7 @@ RUN apt-get clean && apt-get update && apt-get install -y \
     python-numpy \
     python-pygraphviz \
     python-pyqt5 \
+    python-pyqt5.qtsvg \
     python-pyqt5.qtwebkit \
     python-sphinx \
     python-tk \

@@ -1,7 +1,8 @@
 # Dockerfile
 FROM ubuntu:18.04
 
-RUN apt-get clean && apt-get update && apt-get install -y \ 
+RUN apt-get clean && apt-get update &&  \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y \ 
     build-essential \
     cmake \
     debhelper \
@@ -41,7 +42,7 @@ RUN apt-get clean && apt-get update && apt-get install -y \
     python-dev \
     python-git \
     python-gts \
-    python-imaging \
+    python-pil \
     python-matplotlib \
     python-minieigen \
     python-numpy \

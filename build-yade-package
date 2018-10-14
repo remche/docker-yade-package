@@ -11,6 +11,7 @@ sed -i.bak -e s/VERSION/$version/ -e s/DISTRIBUTION/$1/ -e s/DATE/"$date"/ debia
 sed -i.bak -e s/VERSIONYADEREPLACE/$version/ debian/rules
 
 git checkout -b debian/$1 origin/master 
-gbp buildpackage --git-ignore-new  --git-no-pristine-tar --git-debian-branch=debian/$1 --git-upstream-tag='master'
+cat debian/control
+gbp buildpackage --git-ignore-new --git-no-pristine-tar --git-upstream-tag='master'
 
 chmod -R a+w /data
